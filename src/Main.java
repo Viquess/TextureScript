@@ -15,12 +15,14 @@ public class Main {
         for (File model : modelsDirectory.listFiles()) {
             replaceText(model);
         }
+
+        System.out.println("\n\u001b[32mProcesso completato!");
     }
 
     public static void replaceText(File file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
 
-        String line = "", oldtext = "";
+        String line, oldtext = "";
         while ((line = reader.readLine()) != null) {
             oldtext += line + "\r\n";
         }
